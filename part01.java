@@ -12,108 +12,11 @@ public class part01{
 
 		putOpening();
 		
-		putCommand0();
+		Command.putCommand0();
 
 		putStageClear();
 
 	}
-
-	public static void putCommand0() throws java.io.IOException{
-
-		put("1. ミルクを与える");
-		put("2. 寝る");
-		put("3. あやす");
-		switch(inputCommand()){
-			case '1':{
-				good += 2;
-				getYutoStatus();
-				putStageClear();
-				putCommand0();
-				break;
-			}
-			case '2':{
-				good += 5;
-				getYutoStatus();
-				putStageClear();
-				putCommand0();
-				break;
-			}
-			case '3':{
-				good += 7;
-				getYutoStatus();
-				putStageClear();
-				putCommand0();
-				break;
-			}
-			
-		}
-
-	}
-
-	public static void putCommand1() throws java.io.IOException{
-
-		put("1. ご飯をあげる");
-		put("2. 遊ぶ");
-		put("3. お菓子をあげる");
-		switch(inputCommand()){
-			case '1':{
-				good += 2;
-				getYutoStatus();
-				putStageClear();
-				putCommand1();
-				break;
-			}
-			case '2':{
-				good += 5;
-				getYutoStatus();
-				putStageClear();
-				putCommand1();
-				break;
-			}
-			case '3':{
-				good += 10;
-				ikuji();
-				getYutoStatus();
-				putStageClear();
-				putCommand1();
-				break;
-			}
-		}
-
-	}
-
-	public static void putCommand2() throws java.io.IOException{
-
-		put("1. ご飯をあげる");
-		put("2. 遊ぶ");
-		put("3. おもちゃをあげる");
-		switch(inputCommand()){
-			case '1':{
-				good += 2;
-				getYutoStatus();
-				putStageClear();
-				putCommand2();
-				break;
-			}
-			case '2':{
-				good += 5;
-				getYutoStatus();
-				putStageClear();
-				putCommand2();
-				break;
-			}
-			case '3':{
-				good += 10;
-				ikuji();
-				getYutoStatus();
-				putStageClear();
-				putCommand2();
-				break;
-			}
-		}
-
-	}
-
 
 	/**
 	* オープニングを表示
@@ -140,18 +43,17 @@ public class part01{
 	/**
 	* ステージクリア画面を表示
 	*/
-
 	public static void putStageClear() throws java.io.IOException{
 
 		if(good >= 20 && good < 30){
 			age = 1;
 			put(name + "君は" + age + "才になりました!!");
-			putCommand1();
+			Command.putCommand1();
 		}
 		if(good >= 30 && good < 60){
 			age = 2;
 			put(name + "君は" + age + "才になりました!!");
-			putCommand2();
+			Command.putCommand2();
 		}
 		if(good >= 60){
 			age = 3;
@@ -173,7 +75,6 @@ public class part01{
 		good -= d;
     }
   
-    
     public static int inputCommand() throws java.io.IOException{
 
 			int c = System.in.read();
