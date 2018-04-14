@@ -6,10 +6,6 @@ public class part01{
 
 	public static void main (String[] args) throws java.io.IOException{
 
-		if(good >= 60){
-			return;
-		}
-
 		putOpening();
 		
 		Command.putCommand0();
@@ -59,8 +55,9 @@ public class part01{
 			age = 3;
 			put(name + "君は" + age + "才になりました!!");
 			putGameOver();
+			System.exit(0);
+
 		}
-		
 		
 	}
 
